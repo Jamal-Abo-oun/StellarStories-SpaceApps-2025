@@ -6,19 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Space Quiz</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  
 </head>
 
-<body class="bg-black text-white min-h-screen flex items-center justify-center relative">
+<body class="text-white min-h-screen flex items-center justify-center relative">
 
-
+  <!-- خلفية صورة -->
+  <div class="absolute inset-0 -z-10 bg-cover bg-center" style="background-image: url('../assets/images/space.png');"></div>
+  
+  <!-- طبقة شفافة فوق الصورة -->
   <div class="absolute inset-0 bg-black/70 -z-0"></div>
 
+  <!-- محتوى الكويز -->
   <div class="bg-black/80 p-10 rounded-3xl shadow-2xl w-full max-w-3xl text-center relative z-10">
     <h1 class="text-4xl font-bold text-yellow-300 mb-6">🚀 Space Quiz</h1>
 
     <div id="quiz-container" class="space-y-6"></div>
-
     <div id="feedback" class="hidden mt-6 p-4 rounded-xl font-semibold text-lg"></div>
 
     <button id="next-btn"
@@ -62,19 +64,18 @@
     const feedback = document.getElementById('feedback');
     const nextBtn = document.getElementById('next-btn');
 
-    // تحميل السؤال الحالي
     function showQuestion() {
       const q = quizData[currentIndex];
       container.innerHTML = `
-                <h2 class="text-2xl font-bold mb-6">${q.question}</h2>
-                <div class="space-y-3">
-                    ${q.options.map((opt, i) => `
-                        <button class="option-btn w-full bg-indigo-700 hover:bg-indigo-600 px-6 py-3 rounded-lg transition" data-index="${i}">
-                            ${opt}
-                        </button>
-                    `).join('')}
-                </div>
-            `;
+        <h2 class="text-2xl font-bold mb-6">${q.question}</h2>
+        <div class="space-y-3">
+          ${q.options.map((opt, i) => `
+            <button class="option-btn w-full bg-indigo-700 hover:bg-indigo-600 px-6 py-3 rounded-lg transition" data-index="${i}">
+              ${opt}
+            </button>
+          `).join('')}
+        </div>
+      `;
       feedback.classList.add('hidden');
       nextBtn.classList.add('hidden');
 
@@ -108,17 +109,16 @@
       nextBtn.classList.remove('hidden');
     }
 
-    // زر التالي
     nextBtn.addEventListener('click', () => {
       currentIndex++;
       if (currentIndex < quizData.length) {
         showQuestion();
       } else {
         container.innerHTML = `
-                    <h2 class="text-3xl font-bold text-yellow-300">🎉 Quiz Finished!</h2>
-                    <p class="mt-6 text-xl">You got <span class="text-yellow-400">${score}</span> out of <span class="text-yellow-400">${quizData.length}</span> correct!</p>
-                    <a href="../index.html" class="inline-block mt-6 bg-blue-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-400 transition">Home</a>
-                `;
+          <h2 class="text-3xl font-bold text-yellow-300">🎉 Quiz Finished!</h2>
+          <p class="mt-6 text-xl">You got <span class="text-yellow-400">${score}</span> out of <span class="text-yellow-400">${quizData.length}</span> correct!</p>
+          <a href="../index.html" class="inline-block mt-6 bg-blue-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-400 transition">Home</a>
+        `;
         feedback.classList.add('hidden');
         nextBtn.classList.add('hidden');
       }
@@ -128,5 +128,4 @@
   </script>
 
 </body>
-
 </html>
