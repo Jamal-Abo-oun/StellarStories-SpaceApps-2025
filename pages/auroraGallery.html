@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aurora Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="relative min-h-screen text-white font-sans overflow-y-auto">
+    <div
+      class="fixed inset-0 -z-10 bg-cover bg-center"
+      style="background-image: url('../assets/images/space.png')"
+    ></div>
+    <div class="fixed inset-0 bg-black/40 -z-0"></div>
+
+    <main class="relative z-10 p-6 space-y-8 text-center mt-16">
+      <h1 class="text-4xl font-bold text-purple-300">Aurora Gallery</h1>
+      <p class="text-lg max-w-xl mx-auto text-blue-100">
+        Look at these lights!
+      </p>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto"
+      >
+        <img
+          src=""
+          alt="Aurora 1"
+          class="rounded-2xl shadow-xl w-full h-64 object-cover"
+        />
+        <img
+          src=""
+          alt="Aurora 2"
+          class="rounded-2xl shadow-xl w-full h-64 object-cover"
+        />
+        <img
+          src=""
+          alt="Aurora 3"
+          class="rounded-2xl shadow-xl w-full h-64 object-cover"
+        />
+        <img
+          src=""
+          alt="Aurora 4"
+          class="rounded-2xl shadow-xl w-full h-64 object-cover"
+        />
+        <img
+          src=""
+          alt="Aurora 5"
+          class="rounded-2xl shadow-xl w-full h-64 object-cover"
+        />
+        <img
+          src=""
+          alt="Aurora 6"
+          class="rounded-2xl shadow-xl w-full h-64 object-cover"
+        />
+      </div>
+
+      <!-- Buttons Container -->
+      <div class="flex flex-col sm:flex-row justify-center gap-6 mt-8">
+        <!-- Back Button -->
+        <a
+          href="../index.html"
+          class="inline-block bg-green-400 text-white px-8 py-3 rounded-full font-bold hover:bg-green-300 transition shadow-lg"
+        >
+          🏠 Back to Home
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
