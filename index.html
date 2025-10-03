@@ -6,37 +6,127 @@
     <title>Stellar Stories</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="relative min-h-screen text-white font-sans overflow-y-auto bg-gradient-to-b from-indigo-900 via-black to-indigo-950">
-    <main class="relative z-10 flex flex-col items-center text-center p-6 space-y-12 mt-24 pb-24">
-      <h1 class="text-6xl sm:text-7xl font-extrabold text-yellow-300 drop-shadow-xl">
-        Welcome to Stellar Stories
+
+  <body class="relative min-h-screen text-white font-sans overflow-y-auto">
+    <div
+      class="fixed inset-0 -z-10 bg-cover bg-center"
+      style="background-image: url('./assets/images/space.png')"
+    ></div>
+    <div class="fixed inset-0 bg-black/40 -z-0"></div>
+
+    <main
+      class="relative z-10 flex flex-col items-center text-center p-6 space-y-12 mt-24 pb-24"
+    >
+      <h1
+        class="text-6xl sm:text-7xl font-extrabold text-yellow-300 drop-shadow-xl"
+      >
+        🌟 Welcome to Stellar Stories!
       </h1>
       <p class="text-2xl sm:text-3xl max-w-2xl text-blue-100 font-medium">
-        Let’s explore space together, learn about the solar system
+        Let's explore space together! Learn fun stuff about the Sun, space
+        weather, and magical sky lights ✨
       </p>
-      <a href="./pages/spaceStory.html" class="bg-pink-400 text-white px-10 py-5 rounded-full text-2xl font-bold hover:bg-pink-300 transition transform hover:scale-105 drop-shadow-lg">
-        Start story
+      <a
+        href="./pages/spaceStory.html"
+        class="bg-pink-400 text-white px-10 py-5 rounded-full text-2xl font-bold hover:bg-pink-300 transition transform hover:scale-105 drop-shadow-lg"
+      >
+        Start Story 🚀
       </a>
 
       <section class="w-full max-w-4xl space-y-8">
         <h2 class="text-4xl font-bold text-green-300 drop-shadow-lg">
-            what is in this website
+          🌞 Space Fun Facts
         </h2>
-        <div>
-          <a href="#" class="block">
-            <div class="bg-indigo-300/40 p-8 rounded-2xl shadow-2xl hover:scale-105 transition text-left">
-              <h3 class="text-2xl sm:text-3xl font-bold text-indigo-100 mb-3">
-                1 
-              </h3>
-              <p class="text-white text-lg sm:text-xl">Details</p>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-6 w-full"
+        >
+          <a href="./pages/spaceStory.html" class="block">
+            <div
+              class="bg-indigo-300/40 p-8 rounded-2xl shadow-2xl hover:scale-105 transition text-left"
+            >
+              <h2 class="text-2xl sm:text-3xl font-bold text-indigo-100 mb-3">
+                🌌 What’s in Space?
+              </h2>
+              <p class="text-white text-lg sm:text-xl">
+                Space has stars, planets, moons and even floating rocks!
+              </p>
+            </div>
+          </a>
+
+          <a href="./pages/solarFlare.html" class="block">
+            <div
+              class="bg-yellow-300/40 p-8 rounded-2xl shadow-2xl hover:scale-105 transition text-left"
+            >
+              <h2 class="text-2xl sm:text-3xl font-bold text-yellow-100 mb-3">
+                ⚡ Solar Flares
+              </h2>
+              <p class="text-white text-lg sm:text-xl">
+                The Sun sometimes shoots out big bursts of energy, These light
+                up space.
+              </p>
+            </div>
+          </a>
+
+          <a href="./pages/solarWinds.html" class="block">
+            <div
+              class="bg-blue-300/40 p-8 rounded-2xl shadow-2xl hover:scale-105 transition text-left"
+            >
+              <h2 class="text-2xl sm:text-3xl font-bold text-blue-100 mb-3">
+                🌬️ Solar Wind
+              </h2>
+              <p class="text-white text-lg sm:text-xl">
+                The Sun blows tiny particles called solar wind. It flows through
+                space like a gentle invisible breeze.
+              </p>
+            </div>
+          </a>
+
+          <a href="./pages/effectEarth.html" class="block">
+            <div
+              class="bg-red-300/40 p-8 rounded-2xl shadow-2xl hover:scale-105 transition text-left"
+            >
+              <h2 class="text-2xl sm:text-3xl font-bold text-red-100 mb-3">
+                📡 Effects on Earth
+              </h2>
+              <p class="text-white text-lg sm:text-xl">
+                Solar flares and wind can shake up satellites, radios, and even
+                electricity.
+              </p>
+            </div>
+          </a>
+
+          <a href="./pages/gallery.html" class="block">
+            <div
+              class="bg-purple-300/40 p-8 rounded-2xl shadow-2xl hover:scale-105 transition text-left"
+            >
+              <h2 class="text-2xl sm:text-3xl font-bold text-purple-100 mb-3">
+                🌈 Magical Auroras
+              </h2>
+              <p class="text-white text-lg sm:text-xl">
+                A colorful lights called auroras — like magic dancing above us!
+              </p>
+            </div>
+          </a>
+          <a href="./pages/quiz.html" class="block">
+            <div
+              class="bg-purple-300/40 p-8 rounded-2xl shadow-2xl hover:scale-105 transition text-left"
+            >
+              <h2 class="text-2xl sm:text-3xl font-bold text-purple-100 mb-3">
+                📝 Take quiz
+              </h2>
+              <p class="text-white text-lg sm:text-xl">
+                Test your knowledge of what you've learned!
+              </p>
             </div>
           </a>
         </div>
       </section>
     </main>
 
-    <footer class="text-center py-6 bg-black/40 text-gray-300">
-      Team name
+    <footer
+      class="text-center p-6 bg-black/50 mt-12 text-lg text-gray-200 rounded-t-xl"
+    >
+      Made with love 💫 | Nebula_Hackers Team
     </footer>
   </body>
 </html>
