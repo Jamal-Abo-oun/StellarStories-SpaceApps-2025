@@ -1,62 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar Flare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Solar Flare</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
+  <body class="relative min-h-screen text-white font-sans overflow-y-auto">
+    <div
+      class="fixed inset-0 -z-10 bg-cover bg-center"
+      style="background-image: url('../assets/images/space.png')"
+    ></div>
+    <div class="fixed inset-0 bg-black/50 -z-0"></div>
 
-<body class="relative min-h-screen text-white font-sans overflow-y-auto">
+    <audio id="bgAudio" autoplay>
+      <source src="../assets/audio/solarFlare.mp3" type="audio/mpeg" />
+    </audio>
 
-   <div class="fixed inset-0 -z-10 bg-cover bg-center" style="background-image: url('../assets/images/space.png');"></div>
-  <div class="fixed inset-0 bg-black/50 -z-0"></div>
+    <main
+      class="relative z-10 flex flex-col items-center px-6 space-y-10 mt-12 pb-24 max-w-5xl mx-auto"
+    >
+      <h1
+        class="text-4xl sm:text-5xl font-bold text-yellow-300 drop-shadow-lg text-center"
+      >
+        ⚡ Let’s Learn About Solar Flares!
+      </h1>
 
-   
-   <main class="relative z-10 flex flex-col items-center px-6 space-y-10 mt-12 pb-24 max-w-5xl mx-auto">
+      <div
+        class="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-2xl w-full max-w-3xl flex flex-col items-center space-y-6"
+      >
+        <div
+          class="w-full aspect-video rounded-xl overflow-hidden border-4 border-yellow-300 shadow-lg"
+        >
+          <video
+            id="flareVideo"
+            class="w-full h-full object-cover"
+            autoplay
+            muted
+            playsinline
+            controls
+          >
+            <source src="#" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
 
-     <h1 class="text-4xl sm:text-5xl font-bold text-yellow-300 drop-shadow-lg text-center">
-      ⚡ Let’s Learn About Solar Flares!
-    </h1>
-
-     <div
-      class="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-2xl w-full max-w-3xl flex flex-col items-center space-y-6">
-
-       <div class="w-full aspect-video rounded-xl overflow-hidden border-4 border-yellow-300 shadow-lg">
-        <video id="flareVideo" class="w-full h-full object-cover" autoplay muted playsinline controls>
-          <source src="#" type="video/webm">
-          Your browser does not support the video tag.
-        </video>
+        <div class="text-center space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-bold text-yellow-200">
+            What Is a Solar Flare? ⚡
+          </h2>
+          <p class="text-white text-lg leading-relaxed px-2 sm:px-8">
+            Sometimes, the Sun gets super excited and sends out a big flash of
+            energy. It’s called a
+            <span class="text-yellow-200 font-bold">Solar Flare</span>! It’s
+            like the Sun shouting “BOOM!” into space. These flares can light up
+            the sky and even tickle Earth’s satellites!
+          </p>
+        </div>
       </div>
 
-       <div class="text-center space-y-4">
-        <h2 class="text-2xl sm:text-3xl font-bold text-yellow-200"> What Is a Solar Flare? ⚡</h2>
-        <p class="text-white text-lg leading-relaxed px-2 sm:px-8">
-          Sometimes, the Sun gets super excited and sends out a big flash of energy.  
-          It’s called a <span class="text-yellow-200 font-bold">Solar Flare</span>!  
-          It’s like the Sun shouting “BOOM!” into space.  
-          These flares can light up the sky and even tickle Earth’s satellites!
-        </p>
-      </div>
-    </div>
+      <a
+        href="./solarWinds.html"
+        class="mt-12 inline-block bg-green-400 text-black px-8 py-3 rounded-full font-bold hover:bg-green-300 transition shadow-md"
+      >
+        ▶️ Next
+      </a>
+    </main>
 
-     <a href="./solarWinds.html"
-      class="mt-12 inline-block bg-green-400 text-black px-8 py-3 rounded-full font-bold hover:bg-green-300 transition shadow-md">
-      ▶️ Next
-    </a>
+    <script>
+      const video = document.getElementById("flareVideo");
+      document.body.addEventListener(
+        "click",
+        () => {
+          if (video.muted) {
+            video.muted = false;
+            video.play();
+          }
+        },
+        { once: true }
+      );
 
-  </main>
-
-  <script>
-     const video = document.getElementById("flareVideo");
-    document.body.addEventListener("click", () => {
-      if (video.muted) {
-        video.muted = false;
-        video.play();
-      }
-    }, { once: true });
-  </script>
-
-</body>
+      
+    </script>
+  </body>
 </html>
