@@ -1,11 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>quiz page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Quiz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
 </head>
-<body>
-    
+
+<body class="bg-black text-white min-h-screen flex items-center justify-center relative">
+
+
+  <div class="absolute inset-0 bg-black/70 -z-0"></div>
+
+  <div class="bg-black/80 p-10 rounded-3xl shadow-2xl w-full max-w-3xl text-center relative z-10">
+    <h1 class="text-4xl font-bold text-yellow-300 mb-6">🚀 Space Quiz</h1>
+
+    <div id="quiz-container" class="space-y-6"></div>
+
+    <div id="feedback" class="hidden mt-6 p-4 rounded-xl font-semibold text-lg"></div>
+
+    <button id="next-btn"
+      class="hidden mt-6 px-8 py-3 rounded-xl font-bold text-black bg-yellow-400 hover:bg-yellow-300 transition">
+      Next ➡️
+    </button>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "What is a Solar Flare?",
+        options: ["A rainbow in space", "An explosion of energy from the Sun", "Wind on Earth"],
+        answer: 1,
+        explanation: "Solar flares are sudden bursts of energy from the Sun's surface."
+      },
+      {
+        question: "What are Solar Winds?",
+        options: ["Winds on the Moon", "Streams of particles from the Sun", "A space storm on Mars"],
+        answer: 1,
+        explanation: "Solar winds are streams of charged particles flowing outward from the Sun."
+      },
+      {
+        question: "What do Solar Storms affect?",
+        options: ["Satellites and communications", "Rainfall on Earth", "Volcanoes"],
+        answer: 0,
+        explanation: "Solar storms can disrupt satellites, power grids, and communications on Earth."
+      },
+      {
+        question: "What causes Auroras?",
+        options: ["Shooting stars", "The Moon", "Solar winds hitting Earth's atmosphere"],
+        answer: 2,
+        explanation: "Auroras happen when solar wind particles collide with Earth's magnetic field."
+      }
+    ];
+
+    let currentIndex = 0;
+    let score = 0;
+
+    const container = document.getElementById('quiz-container');
+    const feedback = document.getElementById('feedback');
+    const nextBtn = document.getElementById('next-btn');
+
+    // تحميل السؤال الحالي
+    function showQuestion() {
+      const q = quizData[currentIndex];
+      container.innerHTML = `
+                <h2 class="text-2xl font-bold mb-6">${q.question}</h2>
+                <div class="space-y-3">
+                    ${q.options.map((opt, i) => `
+                        <button class="option-btn w-full bg-indigo-700 hover:bg-indigo-600 px-6 py-3 rounded-lg transition" data-index="${i}">
+                            ${opt}
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+      feedback.classList.add('hidden');
+      nextBtn.classList.add('hidden');
+
+      document.querySelectorAll('.option-btn').forEach(btn => {
+        btn.addEventListener('click', checkAnswer);
+      });
+    }
+
+    function checkAnswer(e) {
+      const selected = parseInt(e.target.dataset.index);
+      const q = quizData[currentIndex];
+      const buttons = document.querySelectorAll('.option-btn');
+
+      buttons.forEach((btn, i) => {
+        btn.disabled = true;
+        if (i === q.answer) btn.classList.add('bg-green-500');
+      });
+
+      if (selected === q.answer) {
+        e.target.classList.add('bg-green-500');
+        feedback.textContent = "✅ Correct! " + q.explanation;
+        score++;
+        feedback.className = "fade-in mt-6 text-lg font-semibold bg-green-600 p-4 rounded-xl";
+      } else {
+        e.target.classList.add('bg-red-500');
+        feedback.textContent = `❌ Oops! Correct: ${q.options[q.answer]}. ${q.explanation}`;
+        feedback.className = "fade-in mt-6 text-lg font-semibold bg-red-600 p-4 rounded-xl";
+      }
+
+      feedback.classList.remove('hidden');
+      nextBtn.classList.remove('hidden');
+    }
+
+    // زر التالي
+    nextBtn.addEventListener('click', () => {
+      currentIndex++;
+      if (currentIndex < quizData.length) {
+        showQuestion();
+      } else {
+        container.innerHTML = `
+                    <h2 class="text-3xl font-bold text-yellow-300">🎉 Quiz Finished!</h2>
+                    <p class="mt-6 text-xl">You got <span class="text-yellow-400">${score}</span> out of <span class="text-yellow-400">${quizData.length}</span> correct!</p>
+                    <a href="../index.html" class="inline-block mt-6 bg-blue-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-400 transition">Home</a>
+                `;
+        feedback.classList.add('hidden');
+        nextBtn.classList.add('hidden');
+      }
+    });
+
+    showQuestion();
+  </script>
+
 </body>
+
 </html>
