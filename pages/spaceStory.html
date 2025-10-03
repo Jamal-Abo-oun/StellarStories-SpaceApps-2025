@@ -1,40 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space story</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Space story</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
+  <body class="relative min-h-screen text-white font-sans overflow-y-auto">
+    <div
+      class="fixed inset-0 -z-10 bg-cover bg-center"
+      style="background-image: url('../assets/images/space.png')"
+    ></div>
+    <div class="fixed inset-0 bg-black/50 -z-0"></div>
+    <div class="w-full max-w-5xl mx-auto mt-8 mb-12 px-4">
+      <h2
+        class="text-center text-green-300 font-bold text-xl mb-3 drop-shadow-md"
+      >
+        🚀 Story Progress
+      </h2>
 
-<body class="relative min-h-screen text-white font-sans overflow-y-auto">
+      <div class="relative h-5 bg-white/20 rounded-full shadow-inner">
+        <div
+          id="progressBar"
+          class="absolute top-0 left-0 h-5 bg-green-400 rounded-full transition-all duration-500"
+          style="width: 15%"
+        ></div>
+      </div>
 
-   <div class="fixed inset-0 -z-10 bg-cover bg-center" style="background-image: url('../assets/images/space.png');"></div>
-  <div class="fixed inset-0 bg-black/50 -z-0"></div>
- 
-
-   <main class="relative z-10 flex flex-col items-center text-center px-6 space-y-10 mt-20 pb-24 max-w-7xl mx-auto">
-
-     <h1 class="text-4xl sm:text-5xl font-bold text-yellow-300  drop-shadow-lg">
-      🌌 Let’s Explore the spce!
-    </h1>
-
-
-     <div class="w-full max-w-4xl rounded-xl overflow-hidden shadow-xl border-4 border-yellow-300">
-      <iframe class="w-full h-[500px]"
-  src="https://www.youtube.com"
-  title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
+      <div
+        class="flex justify-between text-sm sm:text-base mt-3 text-white font-bold tracking-wide"
+      >
+        <span>🌌 Space</span>
+        <span>⚡ Flare</span>
+        <span>🌬️ Wind</span>
+        <span>📡 Effects</span>
+        <span>🌈 Aurora Gallery</span>
+        <span>📝 Quiz</span>
+      </div>
     </div>
 
-    <!-- زر واحد للانتقال -->
-    <a href="./solarFlare.html"
-      class="mt-12 inline-block bg-green-400 text-black px-8 py-3 rounded-full font-bold hover:bg-green-300 transition shadow-md">
-      ▶️ Next
-    </a>
+    <main
+      class="relative z-10 flex flex-col items-center text-center px-6 space-y-10 mt-20 pb-24 max-w-7xl mx-auto"
+    >
+      <h1 class="text-4xl sm:text-5xl font-bold text-yellow-300 drop-shadow-lg">
+        🌌 Let’s Explore the spce!
+      </h1>
 
-  </main>
-</body>
+      <div
+        class="w-full max-w-4xl rounded-xl overflow-hidden shadow-xl border-4 border-yellow-300"
+      >
+        <iframe
+          class="w-full h-[500px]"
+          src="https://www.youtube.com"
+          title="YouTube video player"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
 
+      <!-- زر واحد للانتقال -->
+      <a
+        href="./solarFlare.html"
+        class="mt-12 inline-block bg-green-400 text-black px-8 py-3 rounded-full font-bold hover:bg-green-300 transition shadow-md"
+      >
+        ▶️ Next
+      </a>
+    </main>
+  </body>
 </html>
